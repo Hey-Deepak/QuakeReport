@@ -32,13 +32,7 @@ public class EarthquakeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.earthquake_activity);
 
-        ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
-        earthquakes.add(new Earthquake("7.7","Sikar","1 June"));
+        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
         ListView earthquakeListView = (ListView) findViewById(R.id.list);
 
