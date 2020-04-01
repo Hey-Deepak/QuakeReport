@@ -50,6 +50,9 @@ public final class QueryUtils {
             // TODO: Parse the response given by the SAMPLE_JSON_RESPONSE string and
             // build up a list of Earthquake objects with the corresponding data.
 
+            JSONObject baseJsonResponce = new JSONObject(SAMPLE_JSON_RESPONSE);
+            JSONArray earthquakeArray = new 
+
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
             // catch the exception here, so the app doesn't crash. Print a log message
