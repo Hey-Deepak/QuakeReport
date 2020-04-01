@@ -51,7 +51,11 @@ public final class QueryUtils {
             // build up a list of Earthquake objects with the corresponding data.
 
             JSONObject baseJsonResponce = new JSONObject(SAMPLE_JSON_RESPONSE);
-            JSONArray earthquakeArray = new 
+            JSONArray earthquakeArray = baseJsonResponce.getJSONArray("features");
+
+            for (int i = 0; i < earthquakeArray.length(); i++){
+                
+            }
 
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
