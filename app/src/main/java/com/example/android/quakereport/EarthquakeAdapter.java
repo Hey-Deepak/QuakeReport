@@ -6,14 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
+
+    private static final String LOCATION_SEPARATOR = " of ";
+    String primaryLocation;
+    String locationOffset;
+
 
     public EarthquakeAdapter(Activity context, ArrayList<Earthquake> earthquake) {
         super(context, 0, earthquake);
@@ -29,16 +31,28 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
         }
 
 
+
+
         Earthquake currentEarthquake = getItem(position);
-
         TextView magnitudeTextView = (TextView) listItemView.findViewById(R.id.magnitude);
-
         magnitudeTextView.setText(currentEarthquake.getMagnitude());
 
 
-        TextView locationTextView = (TextView) listItemView.findViewById(R.id.location);
+        String originalLocation = currentEarthquake.getLocation();
 
-        locationTextView.setText(currentEarthquake.getLocation());
+        if (originalLocation.contains(LOCATION_SEPARATOR)){
+            String[] parts = originalLocation.split(LOCATION_SEPARATOR);
+            locationOffset = parts[0] + LOCATION_SEPARATOR;
+            primaryLocation = parts[1];
+        } else {
+            locationOffset = getContext().getString(R.string.near_the);
+            primaryLocation = originalLocation;
+        }
+        TextView primaryLocationView = (TextView)listItemView.findViewById(R.id.primary_location);
+        primaryLocationView.setText(primaryLocation);
+        TextView locationOffsetView = (TextView)listItemView.findViewById(R.id.location_offset);
+        locationOffsetView.setText(locationOffset);
+
 
         Date dateObject = new Date(currentEarthquake.getTimeInMiliseconds());
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.date);
