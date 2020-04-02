@@ -2,52 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="16dp"
-    android:orientation="horizontal">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/magnitude"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center"
-        tools:text="9.7" />
-
-    <LinearLayout
-        android:orientation="vertical"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        tools:text="8.9" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_weight="1"
+        tools:text="San Francisco, CA" />
 
-        <TextView
-            android:id="@+id/location"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Sikar,Rajashthan"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:paddingTop="16dp"
-        android:orientation="vertical">
+        android:layout_weight="1"
+        tools:text="Mar 6, 2010" />
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="4 June, 2020" />
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="3:00 PM" />
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="3:00 PM" />
-    </LinearLayout>
 </LinearLayout>
